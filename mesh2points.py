@@ -86,14 +86,36 @@ if __name__ == '__main__':
 
         sample_points.append(target_point)
 
+    # if args.normalize:
+    #     print('Apply normalization to unit ball')
+    #     norms = np.linalg.norm(sample_points, axis=1)
+    #     max_norm = max(norms)
+    #     print('max norm: ', max_norm)
+    #     sample_points /= max_norm
 
-    if args.normalize:
-        print('Apply normalization to unit ball')
-        norms = np.linalg.norm(sample_points, axis=1)
-        max_norm = max(norms)
-        print('max norm: ', max_norm)
-        sample_points /= max_norm
+    output.write( '# .PCD v0.7 - Point Cloud Data file format' )
+    output.write('\n')
+    output.write( 'VERSION 0.7' )
+    output.write('\n')
+    output.write( 'FIELDS x y z' )
+    output.write('\n')
+    output.write( 'SIZE 4 4 4' )
+    output.write('\n')
+    output.write( 'TYPE F F F' )
+    output.write('\n')
+    output.write( 'COUNT 1 1 1' )
+    output.write('\n')
+    output.write( 'WIDTH ' + str(args.number))
+    output.write('\n')
+    output.write( 'HEIGHT 1' )
+    output.write('\n')
+    output.write( 'VIEWPOINT 0 0 0 1 0 0 0' )
+    output.write('\n')
+    output.write( 'POINTS ' + str(args.number))
+    output.write('\n')
+    output.write( 'DATA ascii' )
+    output.write('\n')
 
     for points in sample_points:
-        output.write( ' '.join(["%.4f" % _ for _ in points]) )
+        output.write( ' '.join(["%.8f" % _ for _ in points]) )
         output.write('\n')
