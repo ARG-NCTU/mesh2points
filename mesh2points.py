@@ -83,6 +83,9 @@ if __name__ == '__main__':
 
         target_point = np.array(v1) + (edge_vec1 * prob_vec1 + edge_vec2 * prob_vec2)
         # Random picking point in a triangle: http://mathworld.wolfram.com/TrianglePointPicking.html
+        
+        #target_point = target_point / 1000
+        # Size scaling
 
         sample_points.append(target_point)
 
