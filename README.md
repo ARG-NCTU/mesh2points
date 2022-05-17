@@ -1,6 +1,7 @@
 # Mesh to PointCloud
 
-This tool can uniformly sample 3d points from mesh. The output is a simple ascii format `[x] [y] [z]` point cloud file.
+This tool can uniformly sample 3D points from mesh. The 3D point cloud is used for pose estimation of known objects using ICP. 
+The output is a simple ascii format `[x] [y] [z]` point cloud file.
 
 ## Requirements
 - python3
